@@ -41,10 +41,10 @@ public class main {
 
         System.out.println("zahl eingeben");
         String userinput2 = scanner.nextLine();
-        double zahl1 = Double.parseDouble(userinput2);
-        double zahl2 = 3 * zahl1;
-        double zahl3 = 5 * zahl1;
-        System.out.println(zahl2 + zahl3);
+        double zahl11 = Double.parseDouble(userinput2);
+        double zahl21 = 3 * zahl11;
+        double zahl31 = 5 * zahl11;
+        System.out.println(zahl21 + zahl31);
 
             }
         }
