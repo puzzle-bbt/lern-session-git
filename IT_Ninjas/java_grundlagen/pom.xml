@@ -13,6 +13,12 @@
     <packaging>pom</packaging>
     <modules>
         <module>aufgabe_1</module>
+        <module>aufgabe_1/augabe_2</module>
+        <module>aufgabe_2</module>
+        <module>aufgebe_3</module>
+        <module>aufgabe_4</module>
+        <module>aufgabe_5</module>
+        <module>aufgabe_5</module>
     </modules>
 
 
