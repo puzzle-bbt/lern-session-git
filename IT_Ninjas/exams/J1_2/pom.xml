@@ -5,16 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>IT_Ninjas</artifactId>
+        <artifactId>exams</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>exams</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>J1</module>
-        <module>J1_2</module>
-    </modules>
+    <artifactId>J1_2</artifactId>
 
 
 </project>
