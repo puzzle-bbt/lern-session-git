@@ -1,7 +1,5 @@
-public class main {
-    public static void main(String[] args) {
-
-
+public class aufgabe3 {
+    public static void main (String[]args){
         String endOfTheWorld =
                 "That's great, it starts with an earthquake " +
                         "Birds and snakes, and aeroplanes " +
@@ -60,42 +58,19 @@ public class main {
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it and I feel fine (time I had some time alone)";
-
-        String word;
-        int  repeated=0;
-        int len= 0;
-        int i= 0;
-        int count = 0;
-        int j = 0;
-        int k =0;
-
         String no = endOfTheWorld.replaceAll("[^a-zA-Z0-9 ]", "");
-        String gross = no.toUpperCase();
-        String wordArray[] = gross.split(" ");
-        len = wordArray.length;
+        String items[] = no.split(" ");
+        String on = no.replaceAll("[\s]", "");
+        double count = 0;
+        for (int i = 0; i < on.length(); i++) {
+           if (Character.isLetter(on.charAt(i))){
+               count++;
+           }
 
-        for(i=0; i<len; i++)
-        {
 
-            count = 1;
-            for(j=(i+1); j<(len-1); j++)
-            {
-                if(wordArray[i].equals(wordArray[j]))
-                {
-                    count++;
-                    for(k=j; k<(len-1); k++)
-                    {
-                        wordArray[k] = wordArray[k+1];
-                    }
-                    len--;
-                    j--;
-                }
-            }
-            if(count>1)
-                repeated++;
-            count = 0;
+
         }
-
-        System.out.println("Total Repeated Words = " + repeated);
+        double words = items.length;
+        System.out.println(count / words);
     }
 }

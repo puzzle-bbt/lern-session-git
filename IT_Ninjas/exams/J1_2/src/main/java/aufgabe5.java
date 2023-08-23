@@ -1,4 +1,4 @@
-public class main {
+public class aufgabe5 {
     public static void main(String[] args) {
 
 
@@ -60,42 +60,33 @@ public class main {
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it and I feel fine (time I had some time alone)";
-
-        String word;
-        int  repeated=0;
-        int len= 0;
-        int i= 0;
+        // Copyright R.E.M.
+    StringBuilder builder = new StringBuilder(endOfTheWorld);
+    String no = endOfTheWorld.replaceAll("[^a-zA-Z0-9 ]", "");
+    String gross = no.toUpperCase();
+    String word[] = gross.split(" ");
+for (int i = 0; i < word.length; i++) {
         int count = 0;
-        int j = 0;
-        int k =0;
+        int zahl = 0;
 
-        String no = endOfTheWorld.replaceAll("[^a-zA-Z0-9 ]", "");
-        String gross = no.toUpperCase();
-        String wordArray[] = gross.split(" ");
-        len = wordArray.length;
+        for (int j = 0; j < word.length; j++) {
 
-        for(i=0; i<len; i++)
-        {
+            if (word[i].equals(word[j])) {
 
-            count = 1;
-            for(j=(i+1); j<(len-1); j++)
-            {
-                if(wordArray[i].equals(wordArray[j]))
-                {
-                    count++;
-                    for(k=j; k<(len-1); k++)
-                    {
-                        wordArray[k] = wordArray[k+1];
-                    }
-                    len--;
-                    j--;
+                if (j < i) {
+                    break;
                 }
-            }
-            if(count>1)
-                repeated++;
-            count = 0;
-        }
 
-        System.out.println("Total Repeated Words = " + repeated);
+                count++;
+                zahl = count;
+            }
+        }
+    
+
+        if (count > zahl) {
+            System.out.println( word[i] +" "+ count  );
+        }
     }
 }
+}
+
