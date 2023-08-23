@@ -1,7 +1,7 @@
-public class aufgabe5 {
-    public static void main(String[] args) {
+import java.util.Arrays;
 
-
+public class augabe6 {
+    public static void main(String[] agrs) {
         String endOfTheWorld =
                 "That's great, it starts with an earthquake " +
                         "Birds and snakes, and aeroplanes " +
@@ -60,33 +60,25 @@ public class aufgabe5 {
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it and I feel fine (time I had some time alone)";
-        // Copyright R.E.M.
-        String no = endOfTheWorld.replaceAll("[^a-zA-Z0-9 ]", "");
-        String gross = no.toUpperCase();
-        String word[] = gross.split(" ");
-        int result2 = 0;
-        String k = "jsfskjf";
-        for (int i = 0; i < word.length; i++) {
-            int count = 0;
-
-            for (int j = 0; j < word.length; j++) {
-
-                if (word[i].equals(word[j])) {
-
-                    if (j < i) {
-                        break;
-                    }
-                    count++;
-                    if (result2 >= count) {
-                    } else if (result2 <= count) {
-                        result2 = count;
-                        k = word[i];
-                    }
-                }
+        String gross = endOfTheWorld.toLowerCase();
+        String[] Firstrow = gross.split("(?<=.)");
+        Arrays.sort(Firstrow);
+        String con = " ";
+        for (int l = 0; l <= Firstrow.length - 1; l++) {
+            if (con.contains(Firstrow[l])) {
+            } else if (!con.contains(Firstrow[l])) {
+                con += Firstrow[l];
             }
-            if (i + 1 == word.length) {
-                System.out.println(k + " " + result2);
-            }
+
+
+            int rows = 0;
+            int columns = Firstrow.length;
+
+            String[][] twoDimensionalArray = new String[rows][columns];
+            twoDimensionalArray[0] = Firstrow;
+
+            System.out.println(Arrays.deepToString(twoDimensionalArray));
+
         }
     }
 }
