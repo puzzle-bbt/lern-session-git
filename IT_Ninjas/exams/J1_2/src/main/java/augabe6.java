@@ -65,7 +65,6 @@ public class augabe6 {
         String[] PartsFürPos = smalltext.split("(?<=.)");
         String[] parts = smalltext.split("(?<=.)");
         Arrays.sort(parts);
-        System.out.println(parts);
         String con = " ";
         String letters[] = smalltext.split("(?<=.)");
         int result2 = 0;
@@ -94,14 +93,14 @@ public class augabe6 {
                 con += parts[l];
             }
         }
-        String[] la = con.split("(?<=.)");
-        String[][] array2D = new String[row + 1][la.length];
-        for (int firstrow = 0; firstrow <= la.length - 1; firstrow++){
-            array2D[0][firstrow] = la[firstrow];
+        String[] Rowparts = con.split("(?<=.)");
+        String[][] array2D = new String[row + 1][Rowparts.length];
+        for (int firstrow = 0; firstrow <= Rowparts.length - 1; firstrow++){
+            array2D[0][firstrow] = Rowparts[firstrow];
         }
         for (int i = 0; i <= parts.length - 1; i++){
-            for (int o = 0; o <= la.length - 1; o++){
-                if (PartsFürPos[i].equals(la[o])){
+            for (int o = 0; o <= Rowparts.length - 1; o++){
+                if (PartsFürPos[i].equals(Rowparts[o])){
                     for (int l = 1; l <= row; l++){
                         if (array2D[l][o] == null){
                             array2D[l][o] = String.valueOf(i);
@@ -114,7 +113,7 @@ public class augabe6 {
             }
         }
         for (int m = 0; m <= row; m++){
-            for (int n = 0; n <= la.length - 1; n++){
+            for (int n = 0; n <= Rowparts.length - 1; n++){
                 if (array2D[m][n] == null){
                     array2D[m][n] = "\\";
                 }
