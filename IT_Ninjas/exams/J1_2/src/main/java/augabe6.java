@@ -1,7 +1,8 @@
+
 import java.util.Arrays;
 
 public class augabe6 {
-    public static void main(String[] agrs) {
+    public static void main(String[] args) {
         String endOfTheWorld =
                 "That's great, it starts with an earthquake " +
                         "Birds and snakes, and aeroplanes " +
@@ -60,26 +61,67 @@ public class augabe6 {
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it (time I had some time alone) " +
                         "It's the end of the world as we know it and I feel fine (time I had some time alone)";
-        String gross = endOfTheWorld.toLowerCase();
-        String[] Firstrow = gross.split("(?<=.)");
-        Arrays.sort(Firstrow);
+        String smalltext = endOfTheWorld.toLowerCase();
+        String[] PartsFürPos = smalltext.split("(?<=.)");
+        String[] parts = smalltext.split("(?<=.)");
+        Arrays.sort(parts);
+        System.out.println(parts);
         String con = " ";
-        for (int l = 0; l <= Firstrow.length - 1; l++) {
-            if (con.contains(Firstrow[l])) {
-            } else if (!con.contains(Firstrow[l])) {
-                con += Firstrow[l];
+        String letters[] = smalltext.split("(?<=.)");
+        int result2 = 0;
+        String k = "jsfskjf";
+        for (int i = 1; i < letters.length; i++){
+            int count = 0;
+            for (int j = 0; j < letters.length; j++){
+                if (letters[i].equals(letters[j])){
+                    if (j < i){
+                        break;
+                    }
+                    count++;
+                    if (result2 >= count){
+                    } else if (result2 <= count){
+                        result2 = count;
+                        k = letters[i];
+                    }
+                }
             }
-
-
-            int rows = 0;
-            int columns = Firstrow.length;
-
-            String[][] twoDimensionalArray = new String[rows][columns];
-            twoDimensionalArray[0] = Firstrow;
-
-            System.out.println(Arrays.deepToString(twoDimensionalArray));
-
+            if (i == letters.length - 1){
+            }
+        }
+        int row = result2;
+        for (int l = 0; l <= parts.length - 1; l++){
+            if (!con.contains(parts[l])){
+                con += parts[l];
+            }
+        }
+        String[] la = con.split("(?<=.)");
+        String[][] array2D = new String[row + 1][la.length];
+        for (int firstrow = 0; firstrow <= la.length - 1; firstrow++){
+            array2D[0][firstrow] = la[firstrow];
+        }
+        for (int i = 0; i <= parts.length - 1; i++){
+            for (int o = 0; o <= la.length - 1; o++){
+                if (PartsFürPos[i].equals(la[o])){
+                    for (int l = 1; l <= row; l++){
+                        if (array2D[l][o] == null){
+                            array2D[l][o] = String.valueOf(i);
+                            for (int u = 0; u <= row; u++){
+                                l++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for (int m = 0; m <= row; m++){
+            for (int n = 0; n <= la.length - 1; n++){
+                if (array2D[m][n] == null){
+                    array2D[m][n] = "\\";
+                }
+            }
+        }
+        for (int print = 0; print <=row; print++){
+            System.out.println(Arrays.deepToString(array2D[print]));
         }
     }
 }
-

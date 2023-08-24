@@ -63,9 +63,31 @@ public class aufgabe4 {
         // Copyright R.E.M.
         String no = endOfTheWorld.replaceAll("[^a-zA-Z0-9 ]", "");
         String items[] = no.split(" ");
+        StringBuilder builder = new StringBuilder(endOfTheWorld);
+        String on = endOfTheWorld.replaceAll("[^a-zA-Z0-9 ]", "");
+        String gross = on.toUpperCase();
+        String word[] = gross.split(" ");
+        for (int i = 0; i < word.length; i++) {
+            int count = 0;
 
+            for (int j = 0; j < word.length; j++) {
 
+                if (word[i].equals(word[j])) {
 
+                    if (j < i) {
+                        break;
+                    }
 
+                    count++;
+                }
+            }
+
+            if (count > 1) {
+                System.out.println("the word " + word[i] + " occured " + count + " time");
+            }
+        }
     }
 }
+
+
+
